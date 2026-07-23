@@ -35,6 +35,7 @@
       <nav class="nav__links" id="navLinks">
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#ai-dlc">AI-DLC</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -60,7 +61,7 @@
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__content reveal">
-          <p class="hero__eyebrow">👋 Hi, I'm</p>
+          <p class="hero__eyebrow"><span class="hero__badge">AI-DLC Enabled</span> Hi, I'm</p>
           <h1 class="hero__title">Ali Haider Talukder <span class="grad">Akib</span></h1>
           <h2 class="hero__role">
             <span class="hero__role-static">I'm a</span>
@@ -133,49 +134,101 @@
       <div class="container">
         <div class="section__head reveal">
           <span class="section__kicker">01 — About</span>
-          <h2 class="section__title">Turning complex problems into clean, scalable code</h2>
+          <h2 class="section__title">Who I am</h2>
         </div>
-        <div class="about">
-          <div class="about__text reveal">
-            <p>
-              I'm a software engineer with a robust foundation in <strong>algorithms and data structures</strong>,
-              demonstrated by solving over <strong>1,200 competitive programming problems</strong>. I specialize
-              in building scalable, efficient software — consistently writing clean, optimized code.
-            </p>
-            <p>
-              At <strong>Brain Station 23</strong>, I've grown from Associate Software Engineer to
-              <strong> Software Engineer II</strong>, leading end-to-end development across system design,
-              backend engineering, frontend, and database work on enterprise products for international clients.
-            </p>
-            <p>
-              I love complex problem-solving and collaborating with cross-functional teams to ship
-              high-quality, measurable results. Outside of work I stay close to the community as a
-              <strong>judge and problem setter</strong> for the Intra AUST Programming Contest.
-            </p>
-            <ul class="about__facts">
-              <li><span>📍</span> Dhaka, Bangladesh</li>
-              <li><span>🎓</span> B.Sc. in CSE, AUST (CGPA 3.46/4.0)</li>
-              <li><span>💼</span> Software Engineer II, Brain Station 23</li>
-              <li><span>🏆</span> Judge & Problem Setter, Intra AUST</li>
-            </ul>
+        <div class="about reveal">
+          <p class="about__lead">
+            Software Engineer II at <strong>Brain Station 23</strong>. I build scalable
+            <strong>.NET / Angular</strong> systems on Azure, backed by <strong>1,200+</strong>
+            competitive programming problems solved — and I ship as a judge &amp; problem setter for Intra AUST.
+          </p>
+          <ul class="about__facts">
+            <li><span>📍</span> Dhaka, Bangladesh</li>
+            <li><span>🎓</span> B.Sc. CSE · AUST · 3.46/4.0</li>
+            <li><span>💼</span> SE II · Brain Station 23</li>
+            <li><span>🏆</span> Judge · Intra AUST</li>
+          </ul>
+          <div class="about__do-row">
+            <div class="about__do"><h4>Backend</h4><p>ASP.NET · C# · APIs</p></div>
+            <div class="about__do"><h4>Frontend</h4><p>Angular · TypeScript</p></div>
+            <div class="about__do"><h4>Cloud &amp; Data</h4><p>Azure · SQL · Redis</p></div>
           </div>
-          <aside class="about__aside reveal">
-            <div class="about__card">
-              <h3>What I do</h3>
-              <div class="about__do"><h4>Backend Engineering</h4><p>Robust APIs & services with ASP.NET, C# and clean architecture.</p></div>
-              <div class="about__do"><h4>Frontend Development</h4><p>Responsive, intuitive UIs with Angular, TypeScript & jQuery.</p></div>
-              <div class="about__do"><h4>Cloud & Data</h4><p>Azure deployments, SQL/PostgreSQL, Redis caching & Docker.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI-DLC -->
+    <section class="section section--alt" id="ai-dlc">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">02 — AI-DLC</span>
+          <h2 class="section__title">I build with AI — not instead of judgment</h2>
+        </div>
+        <div class="aidlc reveal">
+          <div class="aidlc__banner">
+            <div class="aidlc__status">
+              <span class="aidlc__pulse"></span>
+              <span>AI-DLC Enabled</span>
             </div>
-          </aside>
+            <p class="aidlc__pitch">
+              I work the <strong>AI-Driven Development Lifecycle</strong> —
+              AI executes fast across planning, code, and ops; I own architecture,
+              decisions, and quality gates. Humans steer. AI accelerates.
+            </p>
+          </div>
+
+          <div class="aidlc__loop" aria-label="AI-DLC phases">
+            <article class="aidlc__phase" data-phase="1">
+              <div class="aidlc__num">01</div>
+              <h3>Inception</h3>
+              <p>Shape intent with AI — clarify requirements, risk, and success criteria before a line of code ships.</p>
+              <ul>
+                <li>Problem framing</li>
+                <li>Acceptance criteria</li>
+                <li>Context &amp; constraints</li>
+              </ul>
+            </article>
+            <div class="aidlc__arrow" aria-hidden="true">→</div>
+            <article class="aidlc__phase" data-phase="2">
+              <div class="aidlc__num">02</div>
+              <h3>Construction</h3>
+              <p>Pair with AI to design, generate, and refine — then review every change before it lands.</p>
+              <ul>
+                <li>Architecture &amp; APIs</li>
+                <li>Code + tests</li>
+                <li>Human approval gates</li>
+              </ul>
+            </article>
+            <div class="aidlc__arrow" aria-hidden="true">→</div>
+            <article class="aidlc__phase" data-phase="3">
+              <div class="aidlc__num">03</div>
+              <h3>Operations</h3>
+              <p>Keep AI in the loop for delivery and reliability — with me accountable for production outcomes.</p>
+              <ul>
+                <li>CI / CD &amp; deploy</li>
+                <li>Observability</li>
+                <li>Iterate &amp; improve</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="aidlc__tools">
+            <span class="aidlc__tools-label">Day-to-day stack</span>
+            <div class="aidlc__chips">
+              <span>Cursor</span><span>GitHub Copilot</span><span>ChatGPT</span>
+              <span>Prompt engineering</span><span>Agentic workflows</span>
+              <span>Human-in-the-loop</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Experience -->
-    <section class="section section--alt" id="experience">
+    <section class="section" id="experience">
       <div class="container">
         <div class="section__head reveal">
-          <span class="section__kicker">02 — Experience</span>
+          <span class="section__kicker">03 — Experience</span>
           <h2 class="section__title">My professional journey</h2>
         </div>
         <div class="timeline">
@@ -220,10 +273,10 @@
     </section>
 
     <!-- Skills -->
-    <section class="section" id="skills">
+    <section class="section section--alt" id="skills">
       <div class="container">
         <div class="section__head reveal">
-          <span class="section__kicker">03 — Skills</span>
+          <span class="section__kicker">04 — Skills</span>
           <h2 class="section__title">Technologies I work with</h2>
         </div>
         <div class="skills">
@@ -250,27 +303,37 @@
     </section>
 
     <!-- Projects -->
-    <section class="section section--alt" id="projects">
+    <section class="section" id="projects">
       <div class="container">
         <div class="section__head reveal">
-          <span class="section__kicker">04 — Projects</span>
+          <span class="section__kicker">05 — Projects</span>
           <h2 class="section__title">Selected work</h2>
         </div>
-        <div class="filters reveal" id="filters">
-          <button class="filter is-active" data-filter="all">All</button>
-          <button class="filter" data-filter="enterprise">Enterprise</button>
-          <button class="filter" data-filter="web">Web</button>
-          <button class="filter" data-filter="app">Apps</button>
+        <div class="projects-head reveal">
+          <div class="filters" id="filters">
+            <button class="filter is-active" data-filter="all">All</button>
+            <button class="filter" data-filter="enterprise">Enterprise</button>
+            <button class="filter" data-filter="web">Web</button>
+            <button class="filter" data-filter="app">Apps</button>
+          </div>
+          <div class="projects-nav">
+            <button class="pnav" id="prevBtn" aria-label="Scroll projects left">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="pnav" id="nextBtn" aria-label="Scroll projects right">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
         </div>
         <div class="projects" id="projectsGrid"></div>
       </div>
     </section>
 
     <!-- Achievements -->
-    <section class="section" id="achievements">
+    <section class="section section--alt" id="achievements">
       <div class="container">
         <div class="section__head reveal">
-          <span class="section__kicker">05 — Achievements</span>
+          <span class="section__kicker">06 — Achievements</span>
           <h2 class="section__title">Competitive programming &amp; recognition</h2>
         </div>
         <div class="ach">
@@ -304,10 +367,10 @@
     </section>
 
     <!-- Contact -->
-    <section class="section section--alt" id="contact">
+    <section class="section" id="contact">
       <div class="container">
         <div class="section__head reveal">
-          <span class="section__kicker">06 — Contact</span>
+          <span class="section__kicker">07 — Contact</span>
           <h2 class="section__title">Let's build something great</h2>
         </div>
         <div class="contact">
