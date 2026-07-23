@@ -32,7 +32,7 @@ const PROJECTS = [
     country: "Norway",
     link: "https://sjoliv.rs.no/",
     image: "assets/img/rs-sjoliv.png",
-    desc: "Course-booking & boating-safety platform for Redningsselskapet (the Norwegian Sea Rescue Society). As lead developer I owned it end-to-end — system design, backend, frontend and database. Single-handedly upgraded the entire solution to the latest .NET and integrated Vipps payments for seamless Norwegian checkout.",
+    desc: "Course-booking platform for Redningsselskapet. Led end-to-end — upgraded to the latest .NET and integrated Vipps payments for Norwegian checkout.",
     tags: [".NET 10", "ASP.NET", "Angular", "Azure", "Redis", "Vipps"],
   },
   {
@@ -41,19 +41,19 @@ const PROJECTS = [
     cat: "enterprise",
     role: "Backend Engineer",
     country: "Norway",
-    desc: "Backend engineering for a Norwegian boat-safety platform — system design, API development and feature implementation on Azure, aligned with the modernized .NET stack.",
+    desc: "Backend engineering for a Norwegian boat-safety platform — APIs and features on Azure, aligned with the modernized .NET stack.",
     tags: [".NET", "ASP.NET", "Azure", "REST API"],
   },
   {
     icon: "🧩",
-    title: "OF — Oslofjordens Friluftsråd",
+    title: "OF — Oslofjorden",
     cat: "enterprise web",
     role: "Software Developer",
     country: "Norway",
     link: "https://www.oslofjorden.org/",
     image: "assets/img/of-platform.png",
-    desc: "Digital platform for Oslofjordens Friluftsråd (Oslo Fjord Outdoor Council) — cabin booking, memberships and outdoor services. Architected scalable designs, optimized databases and built backend + frontend; migrated the codebase to the latest .NET and integrated Vipps payments for memberships and bookings.",
-    tags: [".NET 10", "ASP.NET", "Angular", "PostgreSQL", "Docker", "Redis", "Vipps"],
+    desc: "Digital platform for Oslofjordens Friluftsråd. Migrated to the latest .NET and integrated Vipps for memberships and bookings.",
+    tags: [".NET 10", "ASP.NET", "Angular", "PostgreSQL", "Docker", "Vipps"],
   },
   {
     icon: "🏥",
@@ -126,22 +126,23 @@ function renderProjects() {
            <img src="${p.image}" alt="${p.title} — live site screenshot" loading="lazy" />
            <span class="card__live"><span class="card__live-dot"></span>Live</span>
          </a>`
-      : "";
-    const icon = p.image ? "" : `<div class="card__icon">${p.icon}</div>`;
+      : `<div class="card__thumb card__thumb--empty" aria-hidden="true"><span class="card__icon">${p.icon}</span></div>`;
+    const icon = "";
     const country = p.country
       ? `<span class="card__country">${FLAGS[p.country] || ""}${p.country}</span>`
       : "";
     const visit = p.link
-      ? `<a class="card__visit" href="${p.link}" target="_blank" rel="noopener">Visit site ↗</a>`
+      ? `<a class="card__visit" href="${p.link}" target="_blank" rel="noopener">Visit ↗</a>`
       : "";
+    const tags = p.tags.slice(0, 4).map((t) => `<span>${t}</span>`).join("");
     return `
-    <article class="card${p.image ? " card--feat" : ""} reveal" data-cat="${p.cat}">
+    <article class="card reveal" data-cat="${p.cat}">
       ${thumb}
       <div class="card__body">
         ${icon}
         <div class="card__head"><h3 class="card__title">${p.title}</h3>${country}</div>
         <p class="card__desc">${p.desc}</p>
-        <div class="tags">${p.tags.map((t) => `<span>${t}</span>`).join("")}</div>
+        <div class="tags">${tags}</div>
         <div class="card__foot"><span class="card__role">${p.role}</span>${visit}</div>
       </div>
     </article>`;
@@ -159,8 +160,41 @@ document.getElementById("filters")?.addEventListener("click", (e) => {
   document.querySelectorAll(".card").forEach((card) => {
     const show = filter === "all" || card.dataset.cat.includes(filter);
     card.classList.toggle("is-hidden", !show);
+    card.classList.add("in"); // ensure visible after filtering
   });
+  const grid = document.getElementById("projectsGrid");
+  if (grid) grid.scrollTo({ left: 0, behavior: "smooth" });
+  setTimeout(updateNav, 350);
 });
+
+/* ============ Projects horizontal scroll ============ */
+let updateNav = () => {};
+(function projectsScroll() {
+  const grid = document.getElementById("projectsGrid");
+  const prev = document.getElementById("prevBtn");
+  const next = document.getElementById("nextBtn");
+  if (!grid) return;
+
+  function step() {
+    const card = grid.querySelector(".card:not(.is-hidden)");
+    return (card ? card.offsetWidth : 260) + 16; // card width + gap
+  }
+
+  updateNav = function () {
+    const max = grid.scrollWidth - grid.clientWidth - 2;
+    const atStart = grid.scrollLeft <= 2;
+    const atEnd = grid.scrollLeft >= max;
+    const noScroll = grid.scrollWidth <= grid.clientWidth + 4;
+    if (prev) prev.disabled = atStart || noScroll;
+    if (next) next.disabled = atEnd || noScroll;
+  };
+
+  prev?.addEventListener("click", () => grid.scrollBy({ left: -step(), behavior: "smooth" }));
+  next?.addEventListener("click", () => grid.scrollBy({ left: step(), behavior: "smooth" }));
+  grid.addEventListener("scroll", updateNav, { passive: true });
+  window.addEventListener("resize", updateNav);
+  requestAnimationFrame(updateNav);
+})();
 
 /* ============ Typed role effect ============ */
 (function typedEffect() {
