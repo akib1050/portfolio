@@ -384,15 +384,14 @@
               <span class="contact__link"><span>📍</span> Dhaka, Bangladesh</span>
             </div>
           </div>
-          <form class="contact__form reveal" id="contactForm" action="https://formsubmit.co/alihaiderakib@gmail.com" method="POST">
+          <form class="contact__form reveal" id="contactForm" action="https://formsubmit.co/ajax/alihaiderakib@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="New message from portfolio" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="https://akib1050.github.io/portfolio/#home" />
             <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Your name" /></div>
             <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@example.com" /></div>
             <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required placeholder="Tell me about your project…"></textarea></div>
-            <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+            <button type="submit" class="btn btn--primary btn--full" id="contactSubmit">Send Message</button>
           </form>
         </div>
       </div>
@@ -405,6 +404,11 @@
       <a href="#home" class="footer__top">Back to top ↑</a>
     </div>
   </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+    <span class="toast__icon" aria-hidden="true">✓</span>
+    <span class="toast__msg" id="toastMsg">Message sent — thanks!</span>
+  </div>
 
   <script src="script.js"></script>
 </body>

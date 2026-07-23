@@ -334,3 +334,52 @@ function animateCount(el) {
 
 /* ============ Year ============ */
 document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ============ Contact form + toast ============ */
+(function contactForm() {
+  const form = document.getElementById("contactForm");
+  const toast = document.getElementById("toast");
+  const toastMsg = document.getElementById("toastMsg");
+  const submitBtn = document.getElementById("contactSubmit");
+  if (!form || !toast) return;
+
+  let hideTimer;
+
+  function ping(message, isError) {
+    clearTimeout(hideTimer);
+    toastMsg.textContent = message;
+    toast.classList.toggle("is-error", !!isError);
+    toast.querySelector(".toast__icon").textContent = isError ? "!" : "✓";
+    toast.hidden = false;
+    requestAnimationFrame(() => toast.classList.add("is-on"));
+    hideTimer = setTimeout(() => {
+      toast.classList.remove("is-on");
+      setTimeout(() => { toast.hidden = true; }, 350);
+    }, 3200);
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const prev = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error("send failed");
+      form.reset();
+      ping("Message sent — thanks! I'll get back to you soon.");
+      document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
+      history.replaceState(null, "", "#home");
+    } catch {
+      ping("Couldn't send right now. Please try again or email me.", true);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = prev;
+    }
+  });
+})();
