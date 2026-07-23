@@ -64,40 +64,40 @@ def styles():
             textColor=MUTED, leading=12.5, alignment=TA_CENTER, spaceAfter=1,
         ),
         "h": ParagraphStyle(
-            "Section", parent=base["Normal"], fontName="Helvetica-Bold", fontSize=10,
-            textColor=ACCENT, leading=12, spaceBefore=5, spaceAfter=2.5,
+            "Section", parent=base["Normal"], fontName="Helvetica-Bold", fontSize=9.8,
+            textColor=ACCENT, leading=11.5, spaceBefore=4.5, spaceAfter=2,
         ),
         "body": ParagraphStyle(
-            "Body", parent=base["Normal"], fontName="Helvetica", fontSize=8.8,
-            textColor=INK, leading=11.8, alignment=TA_JUSTIFY, spaceAfter=2,
+            "Body", parent=base["Normal"], fontName="Helvetica", fontSize=8.7,
+            textColor=INK, leading=11.5, alignment=TA_JUSTIFY, spaceAfter=2,
         ),
         "role": ParagraphStyle(
-            "Role", parent=base["Normal"], fontName="Helvetica-Bold", fontSize=9.3,
-            textColor=INK, leading=11.5,
+            "Role", parent=base["Normal"], fontName="Helvetica-Bold", fontSize=9.1,
+            textColor=INK, leading=11,
         ),
         "meta_r": ParagraphStyle(
-            "MetaR", parent=base["Normal"], fontName="Helvetica", fontSize=8.4,
-            textColor=MUTED, leading=11.5, alignment=TA_RIGHT,
+            "MetaR", parent=base["Normal"], fontName="Helvetica", fontSize=8.2,
+            textColor=MUTED, leading=11, alignment=TA_RIGHT,
         ),
         "meta": ParagraphStyle(
-            "Meta", parent=base["Normal"], fontName="Helvetica-Oblique", fontSize=8.3,
-            textColor=MUTED, leading=10.5, spaceAfter=1,
+            "Meta", parent=base["Normal"], fontName="Helvetica-Oblique", fontSize=8.1,
+            textColor=MUTED, leading=10, spaceAfter=1,
         ),
         "company": ParagraphStyle(
-            "Company", parent=base["Normal"], fontName="Helvetica-Oblique", fontSize=8.8,
-            textColor=MUTED, leading=10.5, spaceAfter=1,
+            "Company", parent=base["Normal"], fontName="Helvetica-Oblique", fontSize=8.6,
+            textColor=MUTED, leading=10, spaceAfter=1,
         ),
         "bullet": ParagraphStyle(
-            "Bullet", parent=base["Normal"], fontName="Helvetica", fontSize=8.6,
-            textColor=INK, leading=11.3, leftIndent=10, bulletIndent=0, spaceAfter=1.2,
+            "Bullet", parent=base["Normal"], fontName="Helvetica", fontSize=8.4,
+            textColor=INK, leading=11, leftIndent=10, bulletIndent=0, spaceAfter=1,
         ),
         "skill": ParagraphStyle(
-            "Skill", parent=base["Normal"], fontName="Helvetica", fontSize=8.6,
-            textColor=INK, leading=11.8, spaceAfter=1.5,
+            "Skill", parent=base["Normal"], fontName="Helvetica", fontSize=8.4,
+            textColor=INK, leading=11.4, spaceAfter=1.2,
         ),
         "small": ParagraphStyle(
-            "Small", parent=base["Normal"], fontName="Helvetica", fontSize=8.8,
-            textColor=INK, leading=11, spaceAfter=1,
+            "Small", parent=base["Normal"], fontName="Helvetica", fontSize=8.5,
+            textColor=INK, leading=10.5, spaceAfter=1,
         ),
     }
 
@@ -262,6 +262,15 @@ def build():
         + link("HackerRank", URLS["hackerrank"]) + " Gold Badge in C++.",
     ]
     story += [Paragraph(f"&bull;&nbsp; {ln}", s["bullet"]) for ln in lines]
+
+    # Co-curricular
+    story += section("Co-Curricular Activities", s)
+    story.append(Paragraph(
+        "&bull;&nbsp; <b>2nd Runner-up</b>, Inter Software Football Tournament &nbsp;&middot;&nbsp; "
+        "Participated in the Inter Software Table Tennis Tournament &nbsp;&middot;&nbsp; "
+        "Active in inter-company sports representing Brain Station 23.",
+        s["bullet"],
+    ))
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     doc = SimpleDocTemplate(
