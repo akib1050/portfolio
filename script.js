@@ -372,11 +372,12 @@ document.getElementById("year").textContent = new Date().getFullYear();
       });
       if (!res.ok) throw new Error("send failed");
       form.reset();
-      ping("Message sent — thanks! I'll get back to you soon.");
+      // Go home first, then show top-right ping
+      window.location.hash = "home";
       document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
-      history.replaceState(null, "", "#home");
+      setTimeout(() => ping("Message sent — thanks!"), 280);
     } catch {
-      ping("Couldn't send right now. Please try again or email me.", true);
+      ping("Couldn't send. Try again or email me.", true);
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = prev;
