@@ -26,27 +26,34 @@ const SKILLS = {
 const PROJECTS = [
   {
     icon: "🚢",
-    title: "RS Sjoliv",
+    title: "RS Sjøliv",
     cat: "enterprise web",
     role: "Lead Developer",
-    desc: "Led end-to-end development of an enterprise platform — system design, backend, frontend and database — delivering a highly scalable, reliable solution with measurable performance gains.",
-    tags: ["ASP.NET", "Angular", "Azure", "Redis"],
+    country: "Norway",
+    link: "https://sjoliv.rs.no/",
+    image: "assets/img/rs-sjoliv.png",
+    desc: "Course-booking & boating-safety platform for Redningsselskapet (the Norwegian Sea Rescue Society). As lead developer I owned it end-to-end — system design, backend, frontend and database. Single-handedly upgraded the entire solution to the latest .NET and integrated Vipps payments for seamless Norwegian checkout.",
+    tags: [".NET 10", "ASP.NET", "Angular", "Azure", "Redis", "Vipps"],
   },
   {
     icon: "⚓",
     title: "Trygg Båt",
     cat: "enterprise",
     role: "Backend Engineer",
-    desc: "Backend engineering for a boat-safety platform, covering system design, API development and feature implementation on Azure.",
-    tags: ["ASP.NET", "Azure", "REST API"],
+    country: "Norway",
+    desc: "Backend engineering for a Norwegian boat-safety platform — system design, API development and feature implementation on Azure, aligned with the modernized .NET stack.",
+    tags: [".NET", "ASP.NET", "Azure", "REST API"],
   },
   {
     icon: "🧩",
-    title: "OF Platform",
+    title: "OF — Oslofjordens Friluftsråd",
     cat: "enterprise web",
     role: "Software Developer",
-    desc: "Delivered end-to-end features — architected scalable system design, optimized complex database structures and built robust backend services with intuitive frontend interfaces.",
-    tags: ["ASP.NET", "Angular", "PostgreSQL", "Docker", "Redis"],
+    country: "Norway",
+    link: "https://www.oslofjorden.org/",
+    image: "assets/img/of-platform.png",
+    desc: "Digital platform for Oslofjordens Friluftsråd (Oslo Fjord Outdoor Council) — cabin booking, memberships and outdoor services. Architected scalable designs, optimized databases and built backend + frontend; migrated the codebase to the latest .NET and integrated Vipps payments for memberships and bookings.",
+    tags: [".NET 10", "ASP.NET", "Angular", "PostgreSQL", "Docker", "Redis", "Vipps"],
   },
   {
     icon: "🏥",
@@ -101,19 +108,44 @@ renderBars("bars-frontend", SKILLS.frontend);
 renderBars("bars-cloud", SKILLS.cloud);
 
 /* ============ Render projects ============ */
+const FLAGS = {
+  Norway:
+    '<svg class="flag" viewBox="0 0 22 16" width="17" height="12" aria-hidden="true">' +
+    '<rect width="22" height="16" fill="#ba0c2f"/>' +
+    '<rect x="6" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/>' +
+    '<rect x="7" width="2" height="16" fill="#00205b"/><rect y="7" width="22" height="2" fill="#00205b"/>' +
+    "</svg>",
+};
+
 function renderProjects() {
   const grid = document.getElementById("projectsGrid");
   if (!grid) return;
-  grid.innerHTML = PROJECTS.map(
-    (p) => `
-    <article class="card reveal" data-cat="${p.cat}">
-      <div class="card__icon">${p.icon}</div>
-      <h3 class="card__title">${p.title}</h3>
-      <p class="card__desc">${p.desc}</p>
-      <div class="tags">${p.tags.map((t) => `<span>${t}</span>`).join("")}</div>
-      <div class="card__foot"><span class="card__role">${p.role}</span></div>
-    </article>`
-  ).join("");
+  grid.innerHTML = PROJECTS.map((p) => {
+    const thumb = p.image
+      ? `<a class="card__thumb" href="${p.link}" target="_blank" rel="noopener" aria-label="Visit ${p.title}">
+           <img src="${p.image}" alt="${p.title} — live site screenshot" loading="lazy" />
+           <span class="card__live"><span class="card__live-dot"></span>Live</span>
+         </a>`
+      : "";
+    const icon = p.image ? "" : `<div class="card__icon">${p.icon}</div>`;
+    const country = p.country
+      ? `<span class="card__country">${FLAGS[p.country] || ""}${p.country}</span>`
+      : "";
+    const visit = p.link
+      ? `<a class="card__visit" href="${p.link}" target="_blank" rel="noopener">Visit site ↗</a>`
+      : "";
+    return `
+    <article class="card${p.image ? " card--feat" : ""} reveal" data-cat="${p.cat}">
+      ${thumb}
+      <div class="card__body">
+        ${icon}
+        <div class="card__head"><h3 class="card__title">${p.title}</h3>${country}</div>
+        <p class="card__desc">${p.desc}</p>
+        <div class="tags">${p.tags.map((t) => `<span>${t}</span>`).join("")}</div>
+        <div class="card__foot"><span class="card__role">${p.role}</span>${visit}</div>
+      </div>
+    </article>`;
+  }).join("");
 }
 renderProjects();
 
