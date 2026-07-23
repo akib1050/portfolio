@@ -194,7 +194,7 @@ def build():
         ], s,
     ))
     story.append(job(
-        "Associate Software Engineer", "Brain Station 23", "Jul 2024 &ndash; Dec 2024",
+        "Associate Software Engineer", "Brain Station 23", "Apr 2024 &ndash; Dec 2024",
         [
             "Built production features and contributed to client deliveries using enterprise engineering practices.",
         ], s,
