@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali Haider Talukder Akib — Software Engineer</title>
+  <meta name="description" content="Ali Haider Talukder Akib — Software Engineer II at Brain Station 23. .NET, Angular & Azure specialist and competitive programmer with 1200+ solved problems." />
+  <meta name="author" content="Ali Haider Talukder Akib" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ali Haider Talukder Akib — Software Engineer" />
+  <meta property="og:description" content="Software Engineer II at Brain Station 23. Building scalable .NET & Angular systems on Azure. Competitive programmer with 1200+ solved problems." />
+  <meta property="og:image" content="assets/img/award.png" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%9A%80</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navbar -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="nav__brand">
+        <span class="nav__logo">AH</span>
+        <span class="nav__name">Ali Haider</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="assets/docs/Ali_Haider_Talukder_Akib_CV.pdf" class="btn btn--sm" download>Resume</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <p class="hero__eyebrow">👋 Hi, I'm</p>
+          <h1 class="hero__title">Ali Haider Talukder <span class="grad">Akib</span></h1>
+          <h2 class="hero__role">
+            <span class="hero__role-static">I'm a</span>
+            <span class="typed" id="typed"></span><span class="cursor-blink">|</span>
+          </h2>
+          <p class="hero__desc">
+            Software Engineer II at <strong>Brain Station&nbsp;23</strong> — Bangladesh's largest
+            software company. I design and build scalable, reliable systems with
+            <strong>.NET</strong>, <strong>Angular</strong> and <strong>Azure</strong>, backed by a strong
+            foundation in algorithms from solving <strong>1200+</strong> competitive programming problems.
+          </p>
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">View My Work</a>
+            <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+          </div>
+          <div class="hero__socials">
+            <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17V10.2H6.09V17h2.25zM7.21 9.16a1.3 1.3 0 1 0 0-2.61 1.3 1.3 0 0 0 0 2.61zM18 17v-3.8c0-2-.43-3.55-2.78-3.55a2.44 2.44 0 0 0-2.2 1.2h-.03V10.2H10.8V17h2.25v-3.36c0-.9.17-1.76 1.28-1.76 1.09 0 1.11 1.02 1.11 1.82V17H18z"/></svg>
+            </a>
+            <a href="https://codeforces.com/profile/_akiib" target="_blank" rel="noopener" aria-label="Codeforces" title="Codeforces">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4.5 7.5A1.5 1.5 0 0 1 6 9v10.5A1.5 1.5 0 0 1 4.5 21h-3A1.5 1.5 0 0 1 0 19.5V9a1.5 1.5 0 0 1 1.5-1.5h3zm9-4.5A1.5 1.5 0 0 1 15 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 19.5v-15A1.5 1.5 0 0 1 10.5 3h3zm9 7.5A1.5 1.5 0 0 1 24 12v7.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 18 19.5V12a1.5 1.5 0 0 1 1.5-1.5h3z"/></svg>
+            </a>
+            <a href="mailto:alihaiderakib@gmail.com" aria-label="Email" title="Email">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5zm2 .4v.2l8 5 8-5v-.2H4zm16 2.5-7.4 4.6a1 1 0 0 1-1.2 0L4 7.9V19h16V7.9z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__card reveal">
+          <div class="code-window" aria-hidden="true">
+            <div class="code-window__bar">
+              <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+              <span class="code-window__title">akib.cs</span>
+            </div>
+            <pre class="code-window__body"><code><span class="c-key">public class</span> <span class="c-type">Engineer</span> {
+  <span class="c-key">string</span> Name = <span class="c-str">"Ali Haider Akib"</span>;
+  <span class="c-key">string</span> Role = <span class="c-str">"Software Engineer II"</span>;
+  <span class="c-key">string</span> Company = <span class="c-str">"Brain Station 23"</span>;
+  <span class="c-key">string</span>[] Stack = {
+    <span class="c-str">".NET"</span>, <span class="c-str">"Angular"</span>, <span class="c-str">"Azure"</span>,
+    <span class="c-str">"C#"</span>, <span class="c-str">"SQL"</span>, <span class="c-str">"Redis"</span>
+  };
+  <span class="c-key">int</span> ProblemsSolved = <span class="c-num">1200</span>;
+
+  <span class="c-key">bool</span> ShipsQuality() => <span class="c-key">true</span>;
+}</code></pre>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="hero__scroll" aria-label="Scroll down">
+        <span class="mouse"><span></span></span>
+      </a>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat reveal"><span class="stat__num" data-target="1200" data-suffix="+">0</span><span class="stat__label">Problems Solved</span></div>
+        <div class="stat reveal"><span class="stat__num" data-target="8" data-suffix="+">0</span><span class="stat__label">Onsite Contests</span></div>
+        <div class="stat reveal"><span class="stat__num" data-target="100" data-suffix="+">0</span><span class="stat__label">Online Contests</span></div>
+        <div class="stat reveal"><span class="stat__num" data-target="2" data-suffix="+">0</span><span class="stat__label">Years @ BS23</span></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">01 — About</span>
+          <h2 class="section__title">Turning complex problems into clean, scalable code</h2>
+        </div>
+        <div class="about">
+          <div class="about__text reveal">
+            <p>
+              I'm a software engineer with a robust foundation in <strong>algorithms and data structures</strong>,
+              demonstrated by solving over <strong>1,200 competitive programming problems</strong>. I specialize
+              in building scalable, efficient software — consistently writing clean, optimized code.
+            </p>
+            <p>
+              At <strong>Brain Station 23</strong>, I've grown from Associate Software Engineer to
+              <strong> Software Engineer II</strong>, leading end-to-end development across system design,
+              backend engineering, frontend, and database work on enterprise products for international clients.
+            </p>
+            <p>
+              I love complex problem-solving and collaborating with cross-functional teams to ship
+              high-quality, measurable results. Outside of work I stay close to the community as a
+              <strong>judge and problem setter</strong> for the Intra AUST Programming Contest.
+            </p>
+            <ul class="about__facts">
+              <li><span>📍</span> Dhaka, Bangladesh</li>
+              <li><span>🎓</span> B.Sc. in CSE, AUST (CGPA 3.46/4.0)</li>
+              <li><span>💼</span> Software Engineer II, Brain Station 23</li>
+              <li><span>🏆</span> Judge & Problem Setter, Intra AUST</li>
+            </ul>
+          </div>
+          <aside class="about__aside reveal">
+            <div class="about__card">
+              <h3>What I do</h3>
+              <div class="about__do"><h4>Backend Engineering</h4><p>Robust APIs & services with ASP.NET, C# and clean architecture.</p></div>
+              <div class="about__do"><h4>Frontend Development</h4><p>Responsive, intuitive UIs with Angular, TypeScript & jQuery.</p></div>
+              <div class="about__do"><h4>Cloud & Data</h4><p>Azure deployments, SQL/PostgreSQL, Redis caching & Docker.</p></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">02 — Experience</span>
+          <h2 class="section__title">My professional journey</h2>
+        </div>
+        <div class="timeline">
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-top"><h3>Software Engineer II</h3><span class="tl-date">Jun 2025 — Present</span></div>
+              <p class="tl-company">Brain Station 23</p>
+              <p>Leading end-to-end development on enterprise products — system design, backend, frontend and database. Driving performance optimization and scalable architecture for international clients.</p>
+              <div class="tags"><span>ASP.NET</span><span>Angular</span><span>Azure</span><span>Redis</span></div>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-top"><h3>Software Engineer I</h3><span class="tl-date">Dec 2024 — Jun 2025</span></div>
+              <p class="tl-company">Brain Station 23</p>
+              <p>Delivered critical features across backend services and frontend interfaces, resolving complex integration challenges and improving system reliability.</p>
+              <div class="tags"><span>C#</span><span>ASP.NET</span><span>PostgreSQL</span><span>Docker</span></div>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-top"><h3>Associate Software Engineer</h3><span class="tl-date">Jul 2024 — Dec 2024</span></div>
+              <p class="tl-company">Brain Station 23</p>
+              <p>Started my professional journey building production features, learning enterprise engineering practices and contributing to real client deliveries.</p>
+              <div class="tags"><span>C#</span><span>SQL</span><span>Angular</span></div>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-top"><h3>B.Sc. in Computer Science & Engineering</h3><span class="tl-date">2019 — 2023</span></div>
+              <p class="tl-company">Ahsanullah University of Science &amp; Technology</p>
+              <p>CGPA 3.46/4.0. Coursework in Operating Systems, Data Structures, Algorithms, Distributed Databases, Software Engineering & Computer Architecture.</p>
+              <div class="tags"><span>Algorithms</span><span>DSA</span><span>OOP</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">03 — Skills</span>
+          <h2 class="section__title">Technologies I work with</h2>
+        </div>
+        <div class="skills">
+          <div class="skill-group reveal">
+            <h3>Backend</h3>
+            <div class="bars" id="bars-backend"></div>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Frontend</h3>
+            <div class="bars" id="bars-frontend"></div>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Cloud &amp; Data</h3>
+            <div class="bars" id="bars-cloud"></div>
+          </div>
+        </div>
+        <div class="chips reveal">
+          <span>C#</span><span>.NET / ASP.NET</span><span>Angular</span><span>TypeScript</span><span>JavaScript</span>
+          <span>jQuery</span><span>Java</span><span>Python</span><span>C/C++</span><span>HTML/CSS</span>
+          <span>MS SQL</span><span>PostgreSQL</span><span>Redis</span><span>Azure</span><span>Docker</span>
+          <span>Firebase</span><span>Git</span><span>REST APIs</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section section--alt" id="projects">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">04 — Projects</span>
+          <h2 class="section__title">Selected work</h2>
+        </div>
+        <div class="filters reveal" id="filters">
+          <button class="filter is-active" data-filter="all">All</button>
+          <button class="filter" data-filter="enterprise">Enterprise</button>
+          <button class="filter" data-filter="web">Web</button>
+          <button class="filter" data-filter="app">Apps</button>
+        </div>
+        <div class="projects" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="section" id="achievements">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">05 — Achievements</span>
+          <h2 class="section__title">Competitive programming &amp; recognition</h2>
+        </div>
+        <div class="ach">
+          <div class="ach__media reveal">
+            <img src="assets/img/award.png" alt="Ali Haider Talukder Akib receiving recognition at the Intra AUST Programming Contest" loading="lazy" />
+            <div class="ach__caption">As a judge at the Intra AUST Programming Contest</div>
+          </div>
+          <div class="ach__list">
+            <div class="ach__item reveal"><span class="ach__year">2024</span><div><h4>NCPC Regional Finalist</h4><p>National Collegiate Programming Contest, JU 2024.</p></div></div>
+            <div class="ach__item reveal"><span class="ach__year">2023+</span><div><h4>Judge &amp; Problem Setter</h4><p>Intra AUST Programming Contest — authored competitive problems.</p></div></div>
+            <div class="ach__item reveal"><span class="ach__year">2022</span><div><h4>IUPC AUST 2022 — Regional Finalist</h4><p>Inter University Programming Contest.</p></div></div>
+            <div class="ach__item reveal"><span class="ach__year">2022</span><div><h4>1st Runner-up — Intra AUST (CodeCombat 1.0)</h4><p>Top team placement at the intra-university contest.</p></div></div>
+            <div class="ach__item reveal"><span class="ach__year">2022</span><div><h4>5th — Cefalo CodeFiesta 2022</h4><p>Intra AUST segment.</p></div></div>
+          </div>
+        </div>
+        <div class="cp-cards">
+          <a class="cp reveal" href="https://codeforces.com/profile/_akiib" target="_blank" rel="noopener">
+            <span class="cp__name">Codeforces</span><span class="cp__handle">_akiib</span>
+            <span class="cp__meta">Rating 1210 · 125 contests · 400+ solved</span>
+          </a>
+          <a class="cp reveal" href="https://www.codechef.com/users/ali_haider_007" target="_blank" rel="noopener">
+            <span class="cp__name">CodeChef</span><span class="cp__handle">ali_haider_007</span>
+            <span class="cp__meta">Max rating 1602 · 34 contests · 170+ solved</span>
+          </a>
+          <a class="cp reveal" href="https://www.hackerrank.com/Ali_Haider_Akib" target="_blank" rel="noopener">
+            <span class="cp__name">HackerRank</span><span class="cp__handle">Ali_Haider_Akib</span>
+            <span class="cp__meta">Gold Badge in C++</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">06 — Contact</span>
+          <h2 class="section__title">Let's build something great</h2>
+        </div>
+        <div class="contact">
+          <div class="contact__intro reveal">
+            <p>I'm always open to interesting projects, collaborations and conversations about engineering. Reach out and I'll get back to you.</p>
+            <div class="contact__links">
+              <a href="mailto:alihaiderakib@gmail.com" class="contact__link"><span>✉️</span> alihaiderakib@gmail.com</a>
+              <a href="tel:+8801796620959" class="contact__link"><span>📱</span> +88 01796 620959</a>
+              <span class="contact__link"><span>📍</span> Dhaka, Bangladesh</span>
+            </div>
+          </div>
+          <form class="contact__form reveal" id="contactForm" action="https://formsubmit.co/alihaiderakib@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New message from portfolio" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Your name" /></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@example.com" /></div>
+            <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required placeholder="Tell me about your project…"></textarea></div>
+            <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Ali Haider Talukder Akib. Built with care &amp; clean code.</p>
+      <a href="#home" class="footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
