@@ -333,51 +333,72 @@ function animateCount(el) {
 }
 
 /* ============ Year ============ */
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-/* ============ Contact form + toast ============ */
+/* ============ Toast helper ============ */
+const toast = document.getElementById("toast");
+const toastMsg = document.getElementById("toastMsg");
+let toastTimer;
+
+function ping(message, isError) {
+  if (!toast || !toastMsg) return;
+  clearTimeout(toastTimer);
+  toastMsg.textContent = message;
+  toast.classList.toggle("is-error", !!isError);
+  const icon = toast.querySelector(".toast__icon");
+  if (icon) icon.textContent = isError ? "!" : "✓";
+  toast.hidden = false;
+  requestAnimationFrame(() => toast.classList.add("is-on"));
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("is-on");
+    setTimeout(() => { toast.hidden = true; }, 350);
+  }, 3500);
+}
+
+/* Show toast when returning from FormSubmit redirect */
+(function showSentToast() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("sent") !== "1") return;
+  // Clean URL but keep #home
+  const clean = window.location.pathname + "#home";
+  history.replaceState(null, "", clean);
+  window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+  setTimeout(() => ping("Message sent — thanks!"), 200);
+})();
+
+/* ============ Contact form ============ */
 (function contactForm() {
   const form = document.getElementById("contactForm");
-  const toast = document.getElementById("toast");
-  const toastMsg = document.getElementById("toastMsg");
   const submitBtn = document.getElementById("contactSubmit");
-  if (!form || !toast) return;
-
-  let hideTimer;
-
-  function ping(message, isError) {
-    clearTimeout(hideTimer);
-    toastMsg.textContent = message;
-    toast.classList.toggle("is-error", !!isError);
-    toast.querySelector(".toast__icon").textContent = isError ? "!" : "✓";
-    toast.hidden = false;
-    requestAnimationFrame(() => toast.classList.add("is-on"));
-    hideTimer = setTimeout(() => {
-      toast.classList.remove("is-on");
-      setTimeout(() => { toast.hidden = true; }, 350);
-    }, 3200);
-  }
+  if (!form || !submitBtn) return;
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    e.stopPropagation();
+
     const prev = submitBtn.textContent;
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending…";
 
     try {
-      const res = await fetch(form.action, {
+      const res = await fetch("https://formsubmit.co/ajax/alihaiderakib@gmail.com", {
         method: "POST",
         body: new FormData(form),
         headers: { Accept: "application/json" },
       });
-      if (!res.ok) throw new Error("send failed");
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.success === "false" || data.success === false) {
+        throw new Error("send failed");
+      }
       form.reset();
-      // Go home first, then show top-right ping
       window.location.hash = "home";
       document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
-      setTimeout(() => ping("Message sent — thanks!"), 280);
+      setTimeout(() => ping("Message sent — thanks!"), 300);
     } catch {
-      ping("Couldn't send. Try again or email me.", true);
+      // Fallback: native FormSubmit POST → redirects to home with ?sent=1
+      form.submit();
+      return;
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = prev;
